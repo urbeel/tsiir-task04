@@ -61,7 +61,6 @@ public class ProductService {
         Product product = repository.findById(id).orElseThrow(() ->
                 new EntityNotFoundException(String.format(Messages.PRODUCT_NOT_FOUND, id)));
         mapper.updateExisting(product, productDto);
-        System.out.println(product);
         repository.save(product);
     }
 
